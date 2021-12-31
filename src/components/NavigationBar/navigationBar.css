@@ -1,0 +1,13 @@
+.img-container{
+    width: auto;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: scale(7.5);
+    overflow: hidden;
+    position: absolute;
+    left: 3rem;
+    top: 12px;
+
+}
