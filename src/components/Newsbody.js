@@ -17,11 +17,11 @@ export default function Newsbody(props) {
             return (
               <Newsitem
                 title={objdata.title}
-                url={objdata.url}
-                imgUrl={objdata.urlToImage}
-                description={objdata.description}
-                key={objdata.url}
-                src={objdata.source.name}
+                url={objdata.link}
+                imgUrl={objdata.media}
+                description={objdata.excerpt}
+                key={objdata._id}
+                src={objdata.clean_url}
               />
             );
           })}

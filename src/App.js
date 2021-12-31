@@ -12,12 +12,8 @@ function App() {
   const [category, setCategory] = useState("Latest");
   const [progress, setProgress] = useState(0);
   const [newsResult, setNewsResult] = useState();
-  const [loadmore, setLoadmore] = useState(20);
+  const [loadmore, setLoadmore] = useState(10);
   const [keyword, setKeyword] = useState("");
-  const proxyUrl = "https://cors-anywhere.herokuapp.com/";
-  const apiKey = "509188a77b8842cda77e53f751ce7aaf";
-  // console.log(category)
-  const url = `https://newsapi.org/v2/everything?q=${category}&language=hi&apiKey=${apiKey}&pageSize=${loadmore}`;
   const [isFetching, setIsFetching] = useInfiniteScroll(fetchMoreListItems);
 
   function fetchMoreListItems() {
@@ -26,18 +22,24 @@ function App() {
       setData(data);
       setIsFetching(false);
     }, 2000);}
-
+    
+    const options = {
+      method: 'GET',
+      url: 'https://api.newscatcherapi.com/v2/search',
+      params: {q:category, lang: 'hi',page_size:loadmore},
+      headers: {
+        'x-api-key': 'xl9f2x8pApuQKBdobqWOYSl5TcoLIhXj2XE6Qw688Lk',
+      
+      }
+    };
   const getData = async () => {
-    try {
-      const fetchData = await axios.get(url);
-    //   console.log(fetchData);
-      const parsedData = await fetchData.data.articles;
-      setData(parsedData);
-      setNewsResult(fetchData.data.totalResults);
-      setProgress(progress + "100");
-    } catch (err) {
-      console.log(err);
-    }
+   await axios.request(options).then(function (response) {
+      setData(response.data.articles);
+      console.log(response.data)
+      setProgress(100)
+    }).catch(function (error) {
+      console.error(error);
+    });
   };
 
 
