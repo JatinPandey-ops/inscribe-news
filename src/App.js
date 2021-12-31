@@ -14,6 +14,7 @@ function App() {
   const [newsResult, setNewsResult] = useState();
   const [loadmore, setLoadmore] = useState(20);
   const [keyword, setKeyword] = useState("");
+  const proxyUrl = "https://cors-anywhere.herokuapp.com/";
   const apiKey = "509188a77b8842cda77e53f751ce7aaf";
   // console.log(category)
   const url = `https://newsapi.org/v2/everything?q=${category}&language=hi&apiKey=${apiKey}&pageSize=${loadmore}`;
