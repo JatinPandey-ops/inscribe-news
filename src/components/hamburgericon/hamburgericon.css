@@ -1,12 +1,9 @@
 
 
-.list-item{
-    color: rgb(44, 44, 44);
-}
 
 .list-item:hover{
-    color: red;
-    font-weight: bold;
+    color: rgb(255, 145, 145);
+    transform: scaleY(0.8);
     transition: 0.8s;
 }
 

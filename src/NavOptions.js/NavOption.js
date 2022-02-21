@@ -6,8 +6,9 @@ const navOption = [
     'Health',
     'Bollywood News',
     'Movies',
-    'Movies',
+    'Education',
     'Cricket',
+    'International'
 ]
 
 export default navOption

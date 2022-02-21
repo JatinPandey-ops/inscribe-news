@@ -11,3 +11,9 @@
     top: 12px;
 
 }
+.darkmodeBtn{
+    position: absolute;
+    right: 85px;
+    top: 17px;
+    color: black
+ };   

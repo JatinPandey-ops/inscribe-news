@@ -9,11 +9,12 @@ import axios from "axios";
 
 function App() {
   const [data, setData] = useState([]);
-  const [category, setCategory] = useState("Latest");
+  const [category, setCategory] = useState("Breaking-News");
   const [progress, setProgress] = useState(0);
   const [newsResult, setNewsResult] = useState();
   const [loadmore, setLoadmore] = useState(10);
   const [keyword, setKeyword] = useState("");
+  const [Mode,setMode] = useState("light")
   const [isFetching, setIsFetching] = useInfiniteScroll(fetchMoreListItems);
 
   function fetchMoreListItems() {
@@ -21,17 +22,18 @@ function App() {
       setLoadmore(loadmore + 10)
       setData(data);
       setIsFetching(false);
-    }, 2000);}
+    }, 10000);}
+    console.log(isFetching)
     
     const options = {
       method: 'GET',
       url: 'https://api.newscatcherapi.com/v2/search',
       params: {q:category, lang: 'hi',page_size:loadmore},
       headers: {
-        'x-api-key': 'xl9f2x8pApuQKBdobqWOYSl5TcoLIhXj2XE6Qw688Lk',
-      
+        'x-api-key': 'CKRKt6ZuorWnxRIv77sMD5is0QTuYjNDEMEvv48FMVA'
       }
     };
+
   const getData = async () => {
    await axios.request(options).then(function (response) {
       setData(response.data.articles);
@@ -41,14 +43,14 @@ function App() {
       console.error(error);
     });
   };
-
-
+  
   useEffect(() => {
     getData();
     setProgress(progress + "30");
   }, [category,loadmore]);
 
 //   console.log(keyword);
+console.log(Mode)
 
   return (
     <>
@@ -61,6 +63,8 @@ function App() {
         keyword={keyword}
         setKeyword={setKeyword}
         setCategory={setCategory}
+        setMode = {setMode}
+        Mode = {Mode}
       />
       <Alertmsg newsResult={newsResult}/>
       <Newsbody
@@ -70,6 +74,7 @@ function App() {
         newsResult={newsResult}
         setNewsResult={setNewsResult}
         data={data}
+        Mode = {Mode}
       />
     </>
   );
