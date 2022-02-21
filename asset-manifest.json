@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/inscribe-news/static/css/main.7ce6e202.css",
-    "main.js": "/inscribe-news/static/js/main.2e7f243c.js",
+    "main.css": "/inscribe-news/static/css/main.41cca8bd.css",
+    "main.js": "/inscribe-news/static/js/main.94446d00.js",
     "static/js/787.512b8df2.chunk.js": "/inscribe-news/static/js/787.512b8df2.chunk.js",
     "index.html": "/inscribe-news/index.html",
-    "main.7ce6e202.css.map": "/inscribe-news/static/css/main.7ce6e202.css.map",
-    "main.2e7f243c.js.map": "/inscribe-news/static/js/main.2e7f243c.js.map",
+    "main.41cca8bd.css.map": "/inscribe-news/static/css/main.41cca8bd.css.map",
+    "main.94446d00.js.map": "/inscribe-news/static/js/main.94446d00.js.map",
     "787.512b8df2.chunk.js.map": "/inscribe-news/static/js/787.512b8df2.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7ce6e202.css",
-    "static/js/main.2e7f243c.js"
+    "static/css/main.41cca8bd.css",
+    "static/js/main.94446d00.js"
   ]
 }
